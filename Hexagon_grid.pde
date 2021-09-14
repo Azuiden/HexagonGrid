@@ -33,13 +33,13 @@ cellWidth = width/cols;
 cellHeight = height/rows;
   
   for (int r = 0; r < rows; r++){
-    for (let c = 0; c < cols; c++){
+    for (int c = 0; c < cols; c++){
       int rndColor = int(random(Color1.length));
       float centerX = c * cellWidth/vertSpaceAdj;
       float centerY = r * cellHeight;
       
       if(c % 2 != 0){
-        centerY = j * cellHeight + cellHeight/2;
+        centerY = r * cellHeight + cellHeight/2;
       }
       
       color color1 = Color1[rndColor];
@@ -85,9 +85,9 @@ void HexagonShadow(float centerX, float centerY, float radius, int translateY) {
  Hexagon(centerX,centerY + translateY,radius); 
  //the 4 coordinates of the quad
  //Could plug these into the quad() but this is easier to read for me
- float[] xy1 = {centerX + radius,centerY}; //TL
- float[] xy2 = {centerX + radius,centerY + translateY}; //TR
- float[] xy3 = {centerX - radius,centerY}; //BL
- float[] xy4 = {centerX - radius,centerY + translateY}; //BR
+ float[] xy1 = {centerX + radius, centerY}; //TL
+ float[] xy2 = {centerX + radius, centerY + translateY}; //TR
+ float[] xy3 = {centerX - radius, centerY}; //BL
+ float[] xy4 = {centerX - radius, centerY + translateY}; //BR
  quad(xy1[0],xy1[1],xy2[0],xy2[1],xy3[0],xy3[1],xy4[0],xy4[1]);
 }
